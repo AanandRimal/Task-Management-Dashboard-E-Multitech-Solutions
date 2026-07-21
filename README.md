@@ -2,7 +2,7 @@
 
 A production-style task dashboard built for a frontend take-home assignment. It demonstrates feature-first architecture, Redux Toolkit + RTK Query, Redux Persist, responsive UI, and polished loading/error/empty states.
 
-**Live demo:** run locally with `npm run dev` → [http://localhost:3000](http://localhost:3000)
+**Live demo:** run locally with `npm run dev` → [https://task-management-dashboard-e-multite.vercel.app/](https://task-management-dashboard-e-multite.vercel.app/)
 
 ---
 
@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000/login](http://localhost:3000/login). Mock auth accepts any valid email and a password with 6+ characters.
+Open [https://task-management-dashboard-e-multite.vercel.app/](https://task-management-dashboard-e-multite.vercel.app/). Mock auth accepts any valid email and a password with 6+ characters.
 
 ### Other scripts
 
