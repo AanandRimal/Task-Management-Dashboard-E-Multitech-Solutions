@@ -19,10 +19,11 @@ export function StatCard({ label, value, hint, adornment, mono = true }: StatCar
 
   return (
     <motion.div
+      className="h-full"
       variants={reduceMotion ? undefined : listItem}
       transition={reduceMotion ? undefined : spring}
     >
-      <Card className="border-border/80 shadow-sm">
+      <Card className="h-full border-border/80 shadow-sm">
         <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">{label}</CardTitle>
           {adornment}
