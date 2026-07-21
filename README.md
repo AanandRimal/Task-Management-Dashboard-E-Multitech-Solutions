@@ -101,7 +101,7 @@ For a guided walkthrough, see **[ARCHITECTURE.md](./ARCHITECTURE.md)**.
 | **RTK Query** | Server state, caching, mutations |
 | **Redux Persist** | Persist auth, filters, preferences |
 | **next-themes** | Light / dark / system theme |
-| **Framer Motion** | List, card, and dialog animations |
+| **Framer Motion** | Page transitions, loading/empty/error fades, list and card animations |
 | **React Hook Form + Zod** | Form validation (single schema source) |
 | **Vitest + Testing Library** | Unit tests |
 | **Playwright** | E2E happy path |
@@ -189,7 +189,7 @@ I chose a **feature-first folder structure** because it keeps related code toget
 | State Persistence (10%) | `store/persist-config.ts`, SSR-safe storage |
 | Responsive UX (10%) | `task-table.tsx` / `task-card.tsx`, `app-shell.tsx` |
 | Reusability (10%) | `DataState`, `ConfirmDialog`, `TaskForm`, `StatCard` |
-| Framer Motion (5%) | `lib/motion.ts`, dashboard + task list animations |
+ Framer Motion (5%) | `lib/motion.ts`, `app-shell.tsx` page transitions, `data-state.tsx` loading/empty/error fades, dashboard + task list animations |
 | TypeScript (5%) | `task.schema.ts`, inferred types, no `any` |
 
 ---

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { LayoutDashboard, ListTodo, LogOut, Menu } from "lucide-react";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { ThemeToggle } from "@/components/common/theme-toggle";
 import { ROUTES } from "@/constants/routes";
 import { selectIsAuthenticated } from "@/features/auth/auth.slice";
 import { useAuth } from "@/features/auth/use-auth";
+import { fade } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setSidebarOpen, toggleSidebar } from "@/store/ui.slice";
@@ -61,6 +63,7 @@ export function AppShell({ children }: AppShellProps) {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const { user, logout } = useAuth();
   const sidebarOpen = useAppSelector((state) => state.ui.sidebarOpen);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -123,7 +126,20 @@ export function AppShell({ children }: AppShellProps) {
             </div>
           </header>
 
-          <main className="flex-1 px-4 py-6 md:px-6">{children}</main>
+          <main className="flex-1 px-4 py-6 md:px-6">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={pathname}
+                variants={reduceMotion ? undefined : fade}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.15 }}
+              >
+                {children}
+              </motion.div>
+            </AnimatePresence>
+          </main>
         </div>
       </div>
 
